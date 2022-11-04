@@ -1,0 +1,51 @@
+CREATE PROCEDURE dbo.inserir_alterar_Cadastro
+       @cpf varchar (15),
+	   @nome varchar(100),
+       @email varchar (100),
+       @senha varchar(10),
+       @flag int
+AS
+       if (@flag = 1)
+       begin
+             insert into TableLogin(CPF,Nome,Email,Senha)
+             values(@cpf,@nome,@email,@senha)
+       end
+       else begin
+             update TableLogin
+             set nome = @nome, email = @email, senha = @senha
+			 where cpf = @cpf
+       end
+
+
+
+CREATE PROCEDURE dbo.ExcluirCadastro
+       @CPF varchar(15)
+AS
+       delete from TableLogin where cpf = @cpf
+
+
+
+CREATE PROCEDURE dbo.buscaTodos
+AS
+       Select cpf, nome, email, senha
+       from TableLogin
+
+
+ALTER PROCEDURE dbo.buscaCadNome
+       @nome varchar(100)
+AS
+       select cpf, nome, email, senha
+       from table1
+       where nome like @nome +'%'
+
+CREATE PROCEDURE dbo.buscaCadCPF
+       @CPF varchar(15)
+AS
+       Select cpf, nome, email, senha
+       from TableLogin
+       where CPF=@CPF
+
+
+Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\lucas\Desktop\Projetos\ProjetoIntegradorV2\Login.mdf;Integrated Security=True;Connect Timeout=30
+
+

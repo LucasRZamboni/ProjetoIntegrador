@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29676585-B8B5-4605-9B48-64A3A0C36960}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ProjetoIntegrador</RootNamespace>
+    <AssemblyName>ProjetoIntegrador</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conexao.cs" />
+    <Compile Include="Contato.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contato.Designer.cs">
+      <DependentUpon>Contato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conteudo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Conteudo.Designer.cs">
+      <DependentUpon>Conteudo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desenvolvedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Desenvolvedor.Designer.cs">
+      <DependentUpon>Desenvolvedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fatec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fatec.Designer.cs">
+      <DependentUpon>Fatec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDeveloper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginDeveloper.Designer.cs">
+      <DependentUpon>LoginDeveloper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mapa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mapa.Designer.cs">
+      <DependentUpon>Mapa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecSenha.Designer.cs">
+      <DependentUpon>RecSenha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignUp.Designer.cs">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignIn.Designer.cs">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sobre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sobre.Designer.cs">
+      <DependentUpon>Sobre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TelaInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaInicial.Designer.cs">
+      <DependentUpon>TelaInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ValidarCPF.cs" />
+    <EmbeddedResource Include="Contato.resx">
+      <DependentUpon>Contato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Conteudo.resx">
+      <DependentUpon>Conteudo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desenvolvedor.resx">
+      <DependentUpon>Desenvolvedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fatec.resx">
+      <DependentUpon>Fatec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginDeveloper.resx">
+      <DependentUpon>LoginDeveloper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapa.resx">
+      <DependentUpon>Mapa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecSenha.resx">
+      <DependentUpon>RecSenha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignUp.resx">
+      <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignIn.resx">
+      <DependentUpon>SignIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sobre.resx">
+      <DependentUpon>Sobre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaInicial.resx">
+      <DependentUpon>TelaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="LoginDataSet.xsc">
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LoginDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoginDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LoginDataSet.xss">
+      <DependentUpon>LoginDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\environmental-protection-g80440e71b_1920.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\environmental-protection-g80440e71b_19201.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\environmental 2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\botao-fechar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seta-para-a-esquerda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2022-09-19 at 10.09.45 PM.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\livro-de-ecologia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\livro-de-ecologia-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\livro-de-ecologia-removebg-preview-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\livro-de-ecologia-removebg-preview-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aperto-de-mao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redacao-de-conteudo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sem Título-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\environmental-protection-326923_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sem Título-.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\localizacao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\localizacao %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bolsa-de-estudos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\localizacao %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sobre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aperto-de-mao1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redacao-de-conteudo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardapio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cruz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cruz1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seta-esquerda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seta-esquerda3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cruz3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cruz31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\livro-de-ecologia2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecolog-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecolog-11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecolog-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\olho1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\olho2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\localizacao2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\localizacao1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banner-Topo-Dev-Citzen-2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sobre nos2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sobre nos21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sobre nos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sobre3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sobre2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\github2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\environmental-protection-g80440e71b_19202.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\environmentalw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\environmental-protection-g80440e71b_19203.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sobre4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\environmentalw1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
